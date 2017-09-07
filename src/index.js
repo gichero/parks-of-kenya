@@ -6,7 +6,7 @@ import ReduxThunk from 'redux-thunk';
 import {Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
 
 import './index.css';
-import App from './App';
+//import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 
@@ -19,7 +19,25 @@ const store = Redux.createStore(
   )
 );
 
+persistStore(store);
+
+class AppLayout extends React.Component {
+    render(){
+        return(
+
+        )
+    }
+}
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(
+    <ReactRedux.Provider store={store}>
+        <Router history={hashHistory}>
+            <Route path = "/" component={AppLayout}>
+            <IndexRoute component={HomePageContainer}/>
+            </Route>
+        </Router>
+    </ReactRedux.Provider>,
+     document.getElementById('root'));
 registerServiceWorker();
