@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import * as Redux from 'redux';
 import * as ReactRedux from 'react-redux';
 import ReduxThunk from 'redux-thunk';
+import {persistStore, autoRehydrate} from 'redux-persist';
 import {Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
 
 import './index.css';
@@ -10,20 +11,23 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 
-const store = Redux.createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  Redux.compose(
-  Redux.applyMiddleware(ReduxThunk),
-  autoRehydrate()
-  )
-);
+// const store = Redux.createStore(
+//   reducer,
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+//   Redux.compose(
+//   Redux.applyMiddleware(ReduxThunk),
+//   autoRehydrate()
+//   )
+// );
 
-persistStore(store);
+// persistStore(store);
 
 class AppLayout extends React.Component {
     render(){
         return(
+            <div>
+                <h1>Kenya Parks reloaded</h1>
+            </div>
 
         )
     }
@@ -32,12 +36,12 @@ class AppLayout extends React.Component {
 
 
 ReactDOM.render(
-    <ReactRedux.Provider store={store}>
+
         <Router history={hashHistory}>
             <Route path = "/" component={AppLayout}>
-            <IndexRoute component={HomePageContainer}/>
+
             </Route>
-        </Router>
-    </ReactRedux.Provider>,
+        </Router>,
+
      document.getElementById('root'));
 registerServiceWorker();
