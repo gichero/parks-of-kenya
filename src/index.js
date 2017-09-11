@@ -7,41 +7,44 @@ import {persistStore, autoRehydrate} from 'redux-persist';
 import {Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
 
 import './index.css';
-//import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+import HomePageContainer from './components/homePage/homePage.js';
+import HomePageReducer from './components/homePage/homePage.reducer.js';
 
-// const store = Redux.createStore(
-//   reducer,
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-//   Redux.compose(
-//   Redux.applyMiddleware(ReduxThunk),
-//   autoRehydrate()
-//   )
-// );
+const reducer = Redux.combineReducers({
+    HomePage: HomePageReducer
+});
 
-// persistStore(store);
+const store = Redux.createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  Redux.compose(
+  Redux.applyMiddleware(ReduxThunk),
+  autoRehydrate()
+  )
+);
+
+persistStore(store);
 
 class AppLayout extends React.Component {
     render(){
         return(
-            <div>
-                <h1>Kenya Parks reloaded</h1>
-            </div>
+        <div className="navbar">
+            <h4><IndexLink to="/" activeClassName="active">Home</IndexLink></h4>
+        </div>
 
         )
     }
 }
 
-
-
 ReactDOM.render(
-
+    <ReactRedux.Provider store={store}>
         <Router history={hashHistory}>
             <Route path = "/" component={AppLayout}>
-
+            <IndexRoute component={HomePageContainer}/>
             </Route>
-        </Router>,
-
+        </Router>
+    </ReactRedux.Provider>,
      document.getElementById('root'));
 registerServiceWorker();
