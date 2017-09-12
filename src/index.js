@@ -13,7 +13,7 @@ import HomePageContainer from './components/homePage/homePage.js';
 import HomePageReducer from './components/homePage/homePage.reducer.js';
 
 const reducer = Redux.combineReducers({
-    HomePage: HomePageReducer
+    HomePage: null
 });
 
 const store = Redux.createStore(
@@ -30,10 +30,8 @@ persistStore(store);
 class AppLayout extends React.Component {
     render(){
         return(
-        <div className="navbar">
-            <h4><IndexLink to="/" activeClassName="active">Home</IndexLink></h4>
-        </div>
-
+            <div className = 'navbar'>
+            </div>
         )
     }
 }
