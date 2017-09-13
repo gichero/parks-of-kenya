@@ -30,7 +30,8 @@ persistStore(store);
 class AppLayout extends React.Component {
     render(){
         return(
-            <div className = 'navbar'>
+            <div>
+                <h4><IndexLink to="/" activeClassName="active">Home</IndexLink></h4>
             </div>
         )
     }
