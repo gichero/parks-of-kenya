@@ -33,9 +33,7 @@ class AppLayout extends React.Component {
             <div>
                 <h4><IndexLink to="/" activeClassName="active">Home</IndexLink></h4>
                 <div  className = 'navbar'>
-                    <h3>About</h3>
-                    <h3>Parks and Reserves</h3>
-                    <h3>Contact</h3>
+                    {this.props.children}
                 </div>
             </div>
         )
