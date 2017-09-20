@@ -10,7 +10,6 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 import HomePageContainer from './components/homePage/homePage.js';
-import HomePageReducer from './components/homePage/homePage.reducer.js';
 
 const reducer = Redux.combineReducers({
     HomePage: null
