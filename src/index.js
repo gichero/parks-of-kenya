@@ -10,9 +10,11 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 import HomePageContainer from './components/homePage/homePage.js';
+import AboutContainer from './components/about/about.js';
 
 const reducer = Redux.combineReducers({
-    HomePage: null
+    HomePage: null,
+    About: null
 });
 
 const store = Redux.createStore(
@@ -28,6 +30,7 @@ persistStore(store);
 
 class AppLayout extends React.Component {
     render(){
+
         return(
             <div>
                 <h4><IndexLink to="/" activeClassName="active">Home</IndexLink></h4>
@@ -44,6 +47,7 @@ ReactDOM.render(
         <Router history={hashHistory}>
             <Route path = "/" component={AppLayout}>
             <IndexRoute component={HomePageContainer}/>
+            <Route path="/about" component={AboutContainer}/>
             </Route>
         </Router>
     </ReactRedux.Provider>,

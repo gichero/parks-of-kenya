@@ -19,5 +19,8 @@ body {
 .navbar {
     padding: 1em;
     font-family: monospace;
+}
 
+.about {
+    text-align: center;
 }
