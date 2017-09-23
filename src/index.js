@@ -12,11 +12,13 @@ import registerServiceWorker from './registerServiceWorker';
 import HomePageContainer from './components/homePage/homePage.js';
 import AboutContainer from './components/about/about.js';
 import ContactContainer from './components/contact/contact.js';
+import ParksContainer from './components/parks/parks.js';
 
 const reducer = Redux.combineReducers({
     HomePage: null,
     About: null,
-    Contact: null
+    Contact: null,
+    Parks: null
 });
 
 const store = Redux.createStore(
@@ -51,6 +53,7 @@ ReactDOM.render(
             <IndexRoute component={HomePageContainer}/>
             <Route path="/about" component={AboutContainer}/>
             <Route path="/contact" component={ContactContainer}/>
+            <Route path="/parks" component={ParksContainer}/>
             </Route>
         </Router>
     </ReactRedux.Provider>,
