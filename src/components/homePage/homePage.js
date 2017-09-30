@@ -9,7 +9,7 @@ class HomePage extends React.Component{
 
     render(){
 
-        
+
         return(
             <div  className = 'navbar'>
                 <h3 key = 'about'><Link to = '/about'>About</Link></h3>

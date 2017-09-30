@@ -12,7 +12,6 @@ class Contact extends React.Component{
         return(
             <div  className = 'contact'>
                 <p>Amos Gichero</p>
-
             </div>
         )
     }
