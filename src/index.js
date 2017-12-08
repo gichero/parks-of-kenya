@@ -14,10 +14,7 @@ import AboutContainer from './components/about/about.js';
 import ContactContainer from './components/contact/contact.js';
 import ParksContainer from './components/parks/parks.js';
 
-const reducer = Redux.combineReducers({
-    HomePage: null,
-    About: null,
-    Contact: null,
+const reducer = Redux.combineReducers(
     Parks: null
 });
 

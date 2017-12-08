@@ -1,6 +1,6 @@
 import React from 'react';
 import * as ReactRedux from 'react-redux';
-import {Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
+//import {Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
 
 class Contact extends React.Component{
     constructor(props){
