@@ -1,6 +1,6 @@
 import React from 'react';
 import * as ReactRedux from 'react-redux';
-//import {Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
+import {Link} from 'react-router';
 
 class About extends React.Component{
     constructor(props){

@@ -4,7 +4,7 @@ import * as Redux from 'redux';
 import * as ReactRedux from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import {persistStore, autoRehydrate} from 'redux-persist';
-import {Router, Route, Link, IndexLink, IndexRoute, hashHistory} from 'react-router';
+import {Router, Route, IndexLink, IndexRoute, hashHistory} from 'react-router';
 
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
@@ -14,7 +14,7 @@ import AboutContainer from './components/about/about.js';
 import ContactContainer from './components/contact/contact.js';
 import ParksContainer from './components/parks/parks.js';
 
-const reducer = Redux.combineReducers(
+const reducer = Redux.combineReducers({
     Parks: null
 });
 
