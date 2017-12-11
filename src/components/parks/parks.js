@@ -4,8 +4,11 @@ import * as ReactRedux from 'react-redux';
 import * as actions from './parks.actions';
 
 class Parks extends React.Component{
-    
 
+    componentDidMount(){
+        this.props.fetchImage();
+    }
+    
     render(){
 
         return(
